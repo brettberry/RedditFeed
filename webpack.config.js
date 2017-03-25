@@ -12,7 +12,7 @@ const autoprefixer = require('autoprefixer');
 const isTest = process.env.NODE_ENV == 'test';
 const isProduction = process.env.NODE_ENV === 'production';
 const isDev = !isProduction;
-const libraryName = 'doodle-app';
+const libraryName = 'reddit-app';
 
 const yamlPath = path.resolve('app.yml');
 const yamlConfig = yaml.load(fs.readFileSync(yamlPath, 'utf8'));

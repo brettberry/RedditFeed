@@ -1,0 +1,33 @@
+@import '../constants';
+
+.subreddit {
+  @include header-style;
+  margin-top: 0;
+}
+
+.username {
+  @include default-font-style;
+  font-size: 1.25em;
+  text-align: left;
+  padding-left: 25px;
+  margin-bottom: 0;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .arrow {
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    fill: rgba(black, 0.3);
+  }
+
+  .directions {
+    @include default-font-style;
+    color: rgba(black, 0.3);
+  }
+}

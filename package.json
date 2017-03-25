@@ -9,7 +9,7 @@
     "start": "node dev-server.js",
     "test": "NODE_ENV=test node_modules/.bin/karma start --single-run --browsers PhantomJS"
   },
-  "author": "Jon Brennecke",
+  "author": "Brett Berry",
   "license": "MIT",
   "repository": "https://github.com/caldera-design/web-boilerplate.git",
   "dependencies": {
@@ -27,6 +27,7 @@
     "radium": "^0.18.1",
     "react": "^15.0.0",
     "react-addons-shallow-compare": "15.3.1",
+    "react-click-outside": "^2.2.0",
     "react-icons": "^2.2.3",
     "react-router": "2.8.1",
     "react-swipeable": "^3.9.2",
