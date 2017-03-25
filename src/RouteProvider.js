@@ -1,8 +1,7 @@
 import React from 'react';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-
-import Login from './Pages/Login';
-import Home from './Pages/Home';
+import { Router, Route, browserHistory } from 'react-router';
+import Login from './components/Login';
+import Home from './components/Home';
 
 export default function RouteProvider() {
   return (

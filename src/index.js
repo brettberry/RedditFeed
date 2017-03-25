@@ -14,5 +14,4 @@ const App = () => (
   </MuiThemeProvider>
 );
 
-
 render(<App/>, document.getElementById('react-main'));

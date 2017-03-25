@@ -28,9 +28,6 @@
   }
 
   .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     appearance: none;
     outline: 0;
     border: solid;
@@ -42,9 +39,9 @@
     width: 100%;
     height: 50px;
     font-family: 'Raleway';
+    font-size: 1em;
     text-transform: uppercase;
     text-align: center;
-    font-size: 1em;
     letter-spacing: 2px;
     background-color: white;
     color: $pretty-purple;

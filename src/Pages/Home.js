@@ -1,14 +1,16 @@
 
 import React, { Component, PropTypes } from 'react';
+import MdDehaze from 'react-icons/lib/md/dehaze';
 import Promise from 'bluebird';
 import fetch from 'isomorphic-fetch';
-import map from 'lodash/map';
+
+import Post from './Post';
 import './home.styles.scss';
 
 class Home extends Component {
 
     state = {
-      items: []
+      posts: []
     }
 
     componentDidMount() {
@@ -25,44 +27,21 @@ class Home extends Component {
           return response.json();
         })
         .then(dataResponse => {
-          this.setState({ items: dataResponse.data.children });
+          this.setState({ posts: dataResponse.data.children });
         });
     }
 
     render() {
-      const { items } = this.state;
+      const { posts } = this.state;
       return (
           <div className="container">
-            <h1 className="subreddit">{!!items.length && items[0].data.subreddit}</h1>
-            <h3 className="username">{this.props.location.query.username}</h3>
-            <Post items={items}/>
+            <MdDehaze className="hamburger"/>
+            <h3 className="username">hello, {this.props.location.query.username}! here's the latest from r/</h3>
+            <h1 className="subreddit">{!!posts.length && posts[0].data.subreddit}</h1>
+            <Post posts={posts}/>
           </div>
         );
     }
 }
-
-class Post extends Component {
-
-  static propTypes = {
-    items: PropTypes.arrayOf(PropTypes.any)
-  }
-
-  render() {
-    return (
-      <div className="itemContainer">
-        {map(this.props.items, (item, key) => (
-          <div className="featuredDiv" key={key}>
-            <h3 className="title">{item.data.title}</h3>
-            <p className="author">{item.data.author}</p>
-            <div className="imageContainer">
-              <img src={item.data.thumbnail} className="image"/>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
-  }
-}
-
 
 export default Home;
