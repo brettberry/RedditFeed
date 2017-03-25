@@ -38,11 +38,15 @@ class Post extends Component {
                        className="swipe"
                        trackMouse
                        key={key}>
-              <h3 className="title">{post.data.title}</h3>
-              <p className="author">{post.data.author}</p>
-              <div className="imageContainer">
-                <img src={post.data.thumbnail} className="image"/>
-              </div>
+              <a href={`https://www.reddit.com${post.data.permalink}`}
+                 className="externalLink"
+                 target="_blank">
+                <h3 className="title">{post.data.title}</h3>
+                <p className="author">{post.data.author}</p>
+                <div className="imageContainer">
+                  <img src={post.data.thumbnail} className="image"/>
+                </div>
+              </a>
             </Swipeable>
           );
         })}

@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import Menu from './Menu';
 import { List } from 'immutable';
 import map from 'lodash/map';
+
+import Footer from './Footer';
 import './voted.styles.scss';
 
 class Upvoted extends Component {
@@ -22,14 +24,19 @@ class Upvoted extends Component {
           {map(upvoted.toJS(), upvote => {
             return (
               <div className="post">
-                <h3 className="title">{upvote.data.title}</h3>
-                <p className="author">{upvote.data.author}</p>
-                <div className="imageContainer">
-                  <img src={upvote.data.thumbnail} className="image"/>
-                </div>
+                <a href={`https://www.reddit.com${upvote.data.permalink}`}
+                   className="externalLink"
+                   target="_blank">
+                  <h3 className="title">{upvote.data.title}</h3>
+                  <p className="author">{upvote.data.author}</p>
+                  <div className="imageContainer">
+                    <img src={upvote.data.thumbnail} className="image"/>
+                  </div>
+                </a>
               </div>
             );
           })}
+          <Footer/>
         </div>
         );
     }

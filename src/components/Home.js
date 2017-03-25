@@ -7,6 +7,7 @@ import MdArrowForward from 'react-icons/lib/md/arrow-forward';
 
 import Menu from './Menu';
 import Post from './Post';
+import Footer from './Footer';
 import './home.styles.scss';
 
 class Home extends Component {
@@ -47,6 +48,7 @@ class Home extends Component {
               <MdArrowForward className="arrow"/>
             </div>
             <Post posts={posts}/>
+            <Footer/>
           </div>
         );
     }
