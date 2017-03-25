@@ -1,4 +1,59 @@
+@import '../constants';
 
 .header {
-  font-family: 'Raleway';
+  @include header-style;
+}
+
+.itemContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 33%;
+  height: 450px;
+
+  .featuredDiv {
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+
+    .title {
+      @include subheader-style;
+      font-size: 1.75em;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .author {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+      transform: scale(1.02);
+      transition: all 0.2s ease;
+    }
+  }
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    padding: 10px;
+
+    .image {
+      width: 100%;
+      height: 90%;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
 }

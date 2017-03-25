@@ -12,14 +12,15 @@ class Login extends Component {
 
   state = {
     username: '',
-    password: ''
+    password: '',
+    showError: false
   }
 
   handleLogin() {
-    this.context.login(this.state.username, this.state.password)
-      .then(() => {
-        this.context.router.push('/admin/edit');
-      });
+    if (this.state.password !== 'password') {
+      return this.setState({ showError: true });
+    }
+    this.context.router.push('/home');
   }
 
   render() {
@@ -60,7 +61,8 @@ class Login extends Component {
                        type="password"
                        underlineFocusStyle={styles.underlineStyle}
                        floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                       onChange={(e) => this.setState({ password: e.target.value })} />
+                       onChange={(e) => this.setState({ password: e.target.value })}
+                       errorText={ this.state.showError && 'incorrect password'}/>
           </div>
           <button onClick={this.handleLogin.bind(this)} className="button">Sign In</button>
         </div>

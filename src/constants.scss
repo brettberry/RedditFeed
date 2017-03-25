@@ -1,6 +1,35 @@
 
+$gradient-color-1: #9B10FF;
+$gradient-color-2: #FF4179;
+$pretty-purple: #5C188C;
+
 @mixin mobile {
   @media all and (max-width: 450px) {
     @content;
   }
+}
+
+@mixin header-style {
+  font-family: 'Raleway';
+  font-weight: 300;
+  font-size: 6em;
+  text-align: center;
+  background: -webkit-linear-gradient(left, $gradient-color-1, $gradient-color-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @include mobile {
+    font-size: 3.5em;
+  }
+}
+
+@mixin subheader-style {
+  font-family: 'Raleway';
+  font-weight: 200;
+  font-size: 2em;
+  text-align: center;
+  margin: 20px;
+  background: -webkit-linear-gradient(left, $gradient-color-1, $gradient-color-2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

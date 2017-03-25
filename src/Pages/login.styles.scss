@@ -8,28 +8,7 @@
   height: 100%;
 
   .welcomeHeader {
-    font-family: 'Raleway';
-    font-weight: 300;
-    font-size: 6em;
-    text-align: center;
-    background: -webkit-linear-gradient(left, #9B10FF, #FF4179);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
-
-    @include mobile {
-      font-size: 3.5em;
-    }
-  }
-
-  .subtitle {
-    font-family: 'Raleway';
-    font-weight: 300;
-    font-size: 2em;
-    text-align: center;
-    background: -webkit-linear-gradient(left, #9B10FF, #FF4179);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @include header-style;
     margin: 0;
   }
 }
@@ -45,14 +24,7 @@
   }
 
   .title {
-    font-family: 'Raleway';
-    font-weight: 200;
-    font-size: 2em;
-    text-align: center;
-    margin: 20px;
-    background: -webkit-linear-gradient(left, #9B10FF, #FF4179);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    @include subheader-style;
   }
 
   .button {
@@ -62,7 +34,7 @@
     appearance: none;
     outline: 0;
     border: solid;
-    border-color: #5C188C;
+    border-color: $pretty-purple;
     border-radius: 5px;
     border-width: 2px;
     margin: 0;
@@ -75,10 +47,10 @@
     font-size: 1em;
     letter-spacing: 2px;
     background-color: white;
-    color: #5C188C;
+    color: $pretty-purple;
 
     &:hover {
-      background-color: #5C188C;
+      background-color: $pretty-purple;
       color: white;
       transition: all 0.5s ease;
       cursor: pointer;
@@ -86,6 +58,7 @@
 
     &:active {
       transform: translateY(3px);
+      background-color: darken($pretty-purple, 5);
     }
   }
 }
