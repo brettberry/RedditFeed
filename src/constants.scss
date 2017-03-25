@@ -33,3 +33,10 @@ $pretty-purple: #5C188C;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@mixin default-font-style {
+  font-family: 'Raleway';
+  font-weight: 200;
+  font-size: 1em;
+  text-align: center;
+}

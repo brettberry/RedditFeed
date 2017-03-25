@@ -6,21 +6,28 @@ import './login.styles.scss';
 class Login extends Component {
 
   static contextTypes = {
-    login: PropTypes.func,
     router: PropTypes.object
   }
 
   state = {
     username: '',
     password: '',
-    showError: false
+    showUsernameError: false,
+    showPasswordError: false
   }
 
   handleLogin() {
-    if (this.state.password !== 'password') {
-      return this.setState({ showError: true });
+    if (this.state.username === '') {
+      this.setState({ showUsernameError: true });
     }
-    this.context.router.push('/home');
+    else if (this.state.password !== 'password') {
+      this.setState({ showPasswordError: true });
+    }
+    else {
+      this.context.router.push({ pathname: '/home',
+                                 query: { username: this.state.username }
+                               });
+    }
   }
 
   render() {
@@ -54,7 +61,8 @@ class Login extends Component {
                        fullWidth={true}
                        underlineFocusStyle={styles.underlineStyle}
                        floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                       onChange={(e) => this.setState({ username: e.target.value })} />
+                       onChange={(e) => this.setState({ username: e.target.value })}
+                       errorText={ this.state.showUsernameError && 'enter a username' }/>
             <TextField style={styles.input}
                        floatingLabelText="Password"
                        fullWidth={true}
@@ -62,7 +70,7 @@ class Login extends Component {
                        underlineFocusStyle={styles.underlineStyle}
                        floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                        onChange={(e) => this.setState({ password: e.target.value })}
-                       errorText={ this.state.showError && 'incorrect password'}/>
+                       errorText={ this.state.showPasswordError && 'incorrect password'}/>
           </div>
           <button onClick={this.handleLogin.bind(this)} className="button">Sign In</button>
         </div>

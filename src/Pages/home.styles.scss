@@ -1,15 +1,19 @@
 @import '../constants';
 
-.header {
+.subreddit {
   @include header-style;
+  margin-bottom: 0;
+}
+
+.username {
+  @include subheader-style;
 }
 
 .itemContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-basis: 33%;
-  height: 450px;
 
   .featuredDiv {
     align-items: flex-end;
@@ -23,14 +27,10 @@
 
     .title {
       @include subheader-style;
-      font-size: 1.75em;
-      font-weight: 300;
-      margin: 0;
     }
 
     .author {
-      display: flex;
-      flex-direction: row;
+      @include default-font-style;
     }
 
     &:hover {
@@ -45,15 +45,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 90%;
     padding: 10px;
+  }
 
-    .image {
-      width: 100%;
-      height: 90%;
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
+  .image {
+    width: 250px;
   }
 }
