@@ -3,12 +3,16 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
 }
 
 .subreddit {
   @include header-style;
-  margin-top: 0;
+
+  @include mobile {
+    font-size: 3.5em;
+    padding-top: 50px;
+  }
 }
 
 .username {

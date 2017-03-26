@@ -20,7 +20,7 @@ class Downvoted extends Component {
         <div className="postContainer">
           <Menu username={username}/>
           <h1 className="header">Downvoted</h1>
-          {downvoted.size === 0 && <h2 className="directions">nothing here...make sure to vote!</h2>}
+          {downvoted.size === 0 && <h2 className="directions">nothing here... make sure to vote!</h2>}
           {map(downvoted.toJS(), downvote => (
             <div className="post">
             <a href={`https://www.reddit.com${downvote.data.permalink}`}

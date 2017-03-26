@@ -18,10 +18,6 @@ $pink: #d32bb4;
   background: -webkit-linear-gradient(left, $gradient-color-1, $gradient-color-2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  @include mobile {
-    font-size: 3.5em;
-  }
 }
 
 @mixin subheader-style {

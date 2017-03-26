@@ -2,6 +2,11 @@
 
 .header {
   @include header-style;
+
+  @include mobile {
+    font-size: 3em;
+    padding-top: 50px;
+  }
 }
 
 .postContainer {
@@ -33,6 +38,12 @@
 
     .title {
       @include subheader-style-no-gradient;
+
+      @include mobile {
+        font-size: 1.75em;
+        margin: 0;
+        padding: 0;
+      }
     }
 
     .author {

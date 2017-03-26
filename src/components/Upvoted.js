@@ -20,7 +20,7 @@ class Upvoted extends Component {
         <div className="postContainer">
           <Menu username={username}/>
           <h1 className="header">Upvoted</h1>
-          {upvoted.size === 0 && <h2 className="directions">nothing here...make sure to vote!</h2>}
+          {upvoted.size === 0 && <h2 className="directions">nothing here... make sure to vote!</h2>}
           {map(upvoted.toJS(), upvote => {
             return (
               <div className="post">

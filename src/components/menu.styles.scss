@@ -8,6 +8,10 @@
   height: 30px;
   margin: 25px;
 
+  @include mobile {
+    margin: 15px;
+  }
+
   .hamburger {
     position: absolute;
     top: 0;
@@ -44,6 +48,10 @@
     .menuItems {
       @include subheader-style;
       text-align: left;
+      
+      @include mobile {
+        padding: 0;
+      }
     }
   }
 }
