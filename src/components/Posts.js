@@ -4,7 +4,7 @@ import Swipeable from 'react-swipeable';
 import { List } from 'immutable';
 import './post.styles.scss';
 
-class Post extends Component {
+class Posts extends Component {
 
   static propTypes = {
     posts: PropTypes.arrayOf(PropTypes.any)
@@ -42,11 +42,11 @@ class Post extends Component {
                  className="externalLink"
                  target="_blank">
                 <h3 className="title">{post.data.title}</h3>
+              </a>
                 <p className="author">{post.data.author}</p>
                 <div className="imageContainer">
                   <img src={post.data.thumbnail} className="image"/>
                 </div>
-              </a>
             </Swipeable>
           );
         })}
@@ -55,4 +55,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default Posts;

@@ -6,7 +6,7 @@ import MdArrowBack from 'react-icons/lib/md/arrow-back';
 import MdArrowForward from 'react-icons/lib/md/arrow-forward';
 
 import Menu from './Menu';
-import Post from './Post';
+import Posts from './Posts';
 import Footer from './Footer';
 import './home.styles.scss';
 
@@ -22,7 +22,7 @@ class Home extends Component {
 
     getRedditData() {
       Promise.resolve()
-        .then(() => fetch('//www.reddit.com/r/aww.json'))
+        .then(() => fetch('https://www.reddit.com/r/aww.json'))
         .then(response => {
           if (response.status >= 400) {
             throw new Error('Bad response from server');
@@ -47,7 +47,7 @@ class Home extends Component {
               <p className="directions">swipe to vote</p>
               <MdArrowForward className="arrow"/>
             </div>
-            <Post posts={posts}/>
+            <Posts posts={posts}/>
             <Footer/>
           </div>
         );

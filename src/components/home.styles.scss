@@ -1,5 +1,11 @@
 @import '../constants';
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
 .subreddit {
   @include header-style;
   margin-top: 0;
@@ -11,6 +17,8 @@
   text-align: left;
   padding-left: 25px;
   margin-bottom: 0;
+  position: absolute;
+  left: 0;
 }
 
 .row {
